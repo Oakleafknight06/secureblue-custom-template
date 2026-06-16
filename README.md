@@ -1,14 +1,25 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# Secureblue Custom Image Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+
+# 🚧🚧UNDER CONTSTRUCTION🚧🚧
+_This repo is a WIP template for how to create a cusotm image based on Secureblue with BlueBuild. I maintain an image for myself, but there are some hurdles with using Secureblue as a base image that I'd like to document in a less cluttered space._
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
 After setup, it is recommended you update this README to describe your custom image.
 
+## TODO:
+- [ ] Update build scripts
+- [ ] Add provenance generation
+  - [ ] Add badge to README
+- [ ] Add provenance verification script
+- [ ] Update README
+
+## Features required as a Secureblue downstream image
+- Image name starts with `silverblue` for audit script compatibility
+- Provenance verification. See build scripts and `/usr/libexec/secureblue/verify-provenance.sh`
+
 ## Installation
-
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
-
+_TODO_: update
 To rebase an existing atomic Fedora installation to the latest build:
 
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
@@ -28,14 +39,10 @@ To rebase an existing atomic Fedora installation to the latest build:
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/how-to/generate-iso/#_top). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+The `latest` tag ... update with upstream
 
 ## Verification
-
+_TODO_: Add mention of SLSA Provenance
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
