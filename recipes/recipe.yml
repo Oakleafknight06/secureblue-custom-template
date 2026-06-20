@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: secureblue-custom-template
+name: silverblue-secureblue-custom-template
 # description will be included in the image's metadata
 description: Template for personal OS image based on Secureblue
 
