@@ -38,7 +38,7 @@ jobs:
           slsa-verifier verify-artifact go-containerregistry.tar.gz --provenance-path provenance.intoto.jsonl --source-uri github.com/google/go-containerregistry --source-tag "${CRANE_VERSION}"
           tar -zxvf go-containerregistry.tar.gz -C /usr/local/bin/ crane
           
-      # Change this to your image name
+      # Change this to your image name, line 46. Change line 51 to your GitHub username as it appears in the ghcr.io URL. Seems to need to be lowercase. Change line 54 to the URL of your repository, name seems to be case-sensetive.
       - name: Verify provenance
         shell: bash
         run: |
@@ -51,7 +51,7 @@ jobs:
             image_url="ghcr.io/oakleafknight06/${image}:latest"
             full_ref=$(crane digest --full-ref "${image_url}")
             echo "Verifying provenance for ${full_ref}..."
-            if ! slsa-verifier verify-image --source-uri 'github.com/Oakleafknight06/startingleaf' --source-branch 'main' "${full_ref}"; then
+            if ! slsa-verifier verify-image --source-uri 'github.com/Oakleafknight06/secureblue-custom-template' --source-branch 'main' "${full_ref}"; then
               failed_images=$(( failed_images + 1 ))
               echo "FAIL: Provenance verification failed for ${image}"
             fi
