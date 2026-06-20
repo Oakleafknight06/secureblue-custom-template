@@ -6,7 +6,7 @@ name: secureblue-custom-template
 description: Template for personal OS image based on Secureblue
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/secureblue/silverblue-main-hardnened
+base-image: ghcr.io/secureblue/silverblue-main-hardened
 image-version: latest
 
 # module configuration, executed in order
